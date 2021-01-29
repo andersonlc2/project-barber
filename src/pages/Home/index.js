@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Header from './components/Header';
 import AreaVideo from './components/AreaVideo';
 import BodyOne from './components/BodyOne';
+import BodyTow from './components/BodyTwo';
+
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -46,6 +48,7 @@ function Home() {
         <AreaVideo />
       </div>
       <BodyOne />
+      <BodyTow />
     </div>
   );
 }

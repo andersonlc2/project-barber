@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useWindowScroll } from 'react-use';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -18,6 +19,11 @@ import barba from './barba.svg';
 const useStyles = makeStyles((theme) => ({
   root: {
     background: 'rgba(255, 255, 255, 0)',
+    boxShadow: 'none',
+    height: '110px',
+  },
+  rootActive: {
+    background: 'black',
     boxShadow: 'none',
     height: '110px',
   },
@@ -45,10 +51,10 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     paddingLeft: 0,
+    height: '100%',
     textDecorationLine: 'none',
     borderBottom: '1px solid hsla(0,0%, 100%, 0.1)',
     marginLeft: '200px',
-    height: '90px',
   },
   divList: {
     marginBottom: 0,
@@ -70,11 +76,34 @@ const useStyles = makeStyles((theme) => ({
 
 function Header() {
   const classes = useStyles();
+  const { y: pageYOffset } = useWindowScroll();
+  const [ activeScroll, setActive ] = useState(false);
+
+  // function getScroll() {
+  //   const windowTop = window.pageYOffset;
+  //   if (windowTop === 0) {
+  //     setActive(false)
+  //   } else {
+  //     setActive(true)
+  //   }
+  // }
+  
+  // window.addEventListener('scroll', function() {
+  //   getScroll()
+  // })
+
+  useEffect(() => {
+    if (pageYOffset > 0) {
+      setActive(true)
+    } else {
+      setActive(false)
+    }
+  }, [pageYOffset]);
 
   return (
-    <AppBar position="fixed" className={ classes.root }>
+    <AppBar position="fixed" className={ activeScroll ? classes.rootActive : classes.root }>
         <div className={ classes.logoContainer }>
-          <Link href="/" component="button" underline='none' >
+          <Link href="/" underline='none' >
             <div>
               <img src={barba} alt="logo" className={ classes.logo }/>
               <Typography variant="body1" component="h1" className={ classes.txtLogo }>
@@ -86,7 +115,6 @@ function Header() {
                   <MenuIcon />
                 </IconButton>
               </Box>
-
             </div>
           </Link>
         </div>
@@ -122,7 +150,6 @@ function Header() {
         <div>
           <Button color="default">Login</Button>
         </div>
-
       </Toolbar>
     </AppBar>
   )

@@ -57,7 +57,7 @@ function AreaVideo() {
       </Hidden>
       <div style={{ flexGrow: 1 }}></div>
       <Hidden smDown>
-        <Box d-flex className={ classes.boxIcons }>
+        <Box className={ classes.boxIcons }>
           <List>
             <ListItem>
               <IconButton><FacebookIcon className={ classes.icons} /></IconButton>
