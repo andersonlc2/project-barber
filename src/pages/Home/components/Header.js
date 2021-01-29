@@ -4,10 +4,14 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Button from '@material-ui/core/Button';
+import Hidden from '@material-ui/core/Hidden';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import Box from '@material-ui/core/Box';
+
 import barba from './barba.svg';
 
 
@@ -15,23 +19,23 @@ const useStyles = makeStyles((theme) => ({
   root: {
     background: 'rgba(255, 255, 255, 0)',
     boxShadow: 'none',
-    position: 'fixed',
-
+    height: '110px',
   },
   logoContainer:{
+    position: 'absolute',
     backgroundColor: '#ffffff',
     paddingLeft: '20px',
     paddingRight: '40px',
     paddingTop: '30px',
     display: 'flex',
     flexDirection: 'column',
-    height: '100%',
+    height: '180px',
     width: '120px',
   },
   logo: {
     width: '100%',
     height: '100%',
-    paddingLeft: '30px',
+    paddingLeft: '20px',
     objectFit: 'contains',
     maxWidth: '72px',
     maxHeight: '65px',
@@ -42,13 +46,13 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     paddingLeft: 0,
     textDecorationLine: 'none',
+    borderBottom: '1px solid hsla(0,0%, 100%, 0.1)',
+    marginLeft: '200px',
+    height: '90px',
   },
   divList: {
     marginBottom: 0,
     paddingBottom: '10px',
-    borderBottom: '1px solid hsla(0,0%, 100%, 0.1)',
-    marginLeft: '100px',
-
   },
   list: {
     display: 'flex',
@@ -56,7 +60,11 @@ const useStyles = makeStyles((theme) => ({
   },
   grow: {
     flexGrow: 1,
-  }
+  },
+  menu: {
+    marginTop: '20px',
+    marginLeft: '10px',
+  },
 
 }));
 
@@ -65,7 +73,6 @@ function Header() {
 
   return (
     <AppBar position="fixed" className={ classes.root }>
-      <Toolbar className={ classes.toolbar }>
         <div className={ classes.logoContainer }>
           <Link href="/" component="button" underline='none' >
             <div>
@@ -73,34 +80,44 @@ function Header() {
               <Typography variant="body1" component="h1" className={ classes.txtLogo }>
                 BarberShop
               </Typography>
+              <Box className={ classes.menu }>
+                <div className={ classes.grow }></div>
+                <IconButton>
+                  <MenuIcon />
+                </IconButton>
+              </Box>
+
             </div>
           </Link>
         </div>
-        <div className={ classes.divList}>
-          <List className={ classes.list }>
-            <ListItem>
-              <Typography variant="body2" component="h2">Home</Typography>
-            </ListItem>            
-            <ListItem>
-              <Typography variant="body2" component="h2">Barbers</Typography>
-            </ListItem>            
-            <ListItem>
-              <Typography variant="body2" component="h2">Serviços</Typography>
-            </ListItem>            
-            <ListItem>
-              <Typography variant="body2" component="h2">Blog</Typography>
-            </ListItem>            
-            <ListItem>
-              <Typography variant="body2" component="h2">Cursos</Typography>
-            </ListItem>            
-            <ListItem>
-              <Typography variant="body2" component="h2">Unidades</Typography>
-            </ListItem>            
-            <ListItem>
-              <Typography variant="body2" component="h2">Contato</Typography>
-            </ListItem>
-          </List>
-        </div>
+      <Toolbar className={ classes.toolbar }>
+        <Hidden smDown>
+          <div className={ classes.divList}>
+            <List className={ classes.list }>
+              <ListItem>
+                <Link component="button" variant="body2" color="inherit">Home</Link>
+              </ListItem>  
+              <ListItem>
+                <Link component="button" variant="body2" color="inherit">Barbers</Link>
+              </ListItem>  
+              <ListItem>
+                <Link component="button" variant="body2" color="inherit">Serviços</Link>
+              </ListItem>  
+              <ListItem>
+                <Link component="button" variant="body2" color="inherit">Blog</Link>
+              </ListItem>  
+              <ListItem>
+                <Link component="button" variant="body2" color="inherit">Cursos</Link>
+              </ListItem>  
+              <ListItem>
+                <Link component="button" variant="body2" color="inherit">Unidades</Link>
+              </ListItem>  
+              <ListItem>
+                <Link component="button" variant="body2" color="inherit">Contato</Link>
+              </ListItem>
+            </List>
+          </div>
+        </Hidden>
         <div className={ classes.grow }></div>
         <div>
           <Button color="default">Login</Button>
