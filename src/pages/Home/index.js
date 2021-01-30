@@ -48,6 +48,7 @@ function Home() {
         <AreaVideo />
       </div>
       <BodyOne />
+      <BodyTow />
     </div>
   );
 }

@@ -2,28 +2,42 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import Hidden from '@material-ui/core/Hidden';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    width: '100%',
+    justifyContent: 'center',
   },
   square: {
-    width: 550,
-    height: 550,
+    maxWidth: 390,
     display: 'flex',
     flexWrap: 'wrap',
-    background: 'red',
+    justifyContent: 'center',
+    margin: 20,
   },
   squares: {
-    width: '50%',
-    height: '50%',
-    border: '2px solid #000',
+    width: '120px',
+    height: '120px',
+    margin: 30,
+    border: '2px solid #ddd',
+    borderRadius: '10px',
+  },
+  img: {
+    maxWidth: 390,
+    maxHeight: 495,
+    border: '6px solid #fff',
+    marginTop: 20,
   },
   txt: {
+    maxWidth: 390,
+    padding: 30,
 
-  },
+  }
 
 
 }));
@@ -34,8 +48,11 @@ export default function BodyTow() {
   return (
     <Box className={ classes.root }>
       <Box className={ classes.txt }>
-        <Typography>
-          OUR HISTORY
+        <Typography variant='h2' component='h3' display='inline' align='center'>
+          O
+        </Typography>        
+        <Typography variant='h4' component='h3' display='inline' align='center'>
+          ur History
         </Typography>
         <Typography>
           The Johnson & Johnson vaccine also provided less immunity among trial 
@@ -46,23 +63,23 @@ export default function BodyTow() {
           are studying different dosing and formulation strategies in the event 
           new variants of the coronavirus outwit their vaccines.
         </Typography>
-        <Typography>
-          The new vaccine candidate is expected to be reviewed for emergency use 
-          authorization by U.S. Food and Drug Administration as soon as next week. 
-          If approved, experts say the Johnson & Johnson single-dose vaccine could 
-          streamline a national COVID-19 vaccination administration campaign 
-          that has to date been criticized as scattered and lethargic. Currently, 
-          the Pfizer-BioNTech and Moderna versions must be given in two doses 
-          several weeks apart.
-        </Typography>
       </Box>
       <Box className={ classes.square }>
         <Box className={ classes.squares }></Box>
         <Box className={ classes.squares }></Box>
         <Box className={ classes.squares }></Box>
         <Box className={ classes.squares }></Box>
-    
       </Box>
+      <Hidden mdDown>
+        <div style={{ width: 300 }}></div>
+      </Hidden>
+      <Hidden lgUp>
+        <img className={ classes.img } src="/images/image1.jpg" alt='barber_show'/>
+      </Hidden>
+      
+
+
+
     </Box>
   );
 }
