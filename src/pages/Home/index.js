@@ -40,7 +40,7 @@ function Home() {
           <video 
             style={{ width: '100%', height: '100%', top: 0, left: 0, objectFit: 'cover'}}
             src="/videos/video.mp4" 
-            autoPlay loop playsInline muted 
+            autoPlay loop muted 
             >
           </video>
         </div>
