@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     width: '100%', 
     height: '100%',
-    background: 'linear-gradient(360deg, rgba(0, 0, 0, 1) 10%, rgba(255, 255, 255, 0) 90%)',
+    background: 'linear-gradient(360deg, rgba(0, 0, 0, 1) 2%, rgba(255, 255, 255, 0) 90%)',
     zIndex: theme.zIndex.appBar -1,
   },
 }));

@@ -15,7 +15,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     width: '100%',
     height: 400,
-
+  },
+  icons: {
+    marginTop: 50,
+    marginBottom: 50,
   },
 }));
 
@@ -25,13 +28,15 @@ function Footer() {
   return (
     <Box className={ classes.root }>
       <Box className={ classes.icons }>
-        <IconButton> <FacebookIcon /> </IconButton>
-        <IconButton> <PinterestIcon /> </IconButton>
-        <IconButton> <InstagramIcon /> </IconButton>
+        <IconButton> <FacebookIcon fontSize='large' /> </IconButton>
+        <IconButton> <PinterestIcon fontSize='large' /> </IconButton>
+        <IconButton> <InstagramIcon fontSize='large' /> </IconButton>
       </Box>
-      <Typography>
-        Aqui é o footer!
-      </Typography>
+      <hr style={{ width: '100%', marginTop: 'auto' }}/>
+
+      <small style={{ marginTop: 'auto', marginBottom: '20px' }}>
+        Copyright - Todos os direitos reservados
+      </small>
     </Box>
   )
 }

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '180px',
   },
   txtHidden: {
-    marginTop: '255px',
+    marginTop: '180px',
     marginLeft: '40px',
   },
   icons: {
@@ -42,7 +42,7 @@ function AreaVideo() {
       <Box>
         <Hidden smDown>
           <Box className={ classes.txt }>
-            <Typography component="h2" variant="h6" style={{ marginBottom: '50px'}}>EXPERIENCE THE MASTER BARBER</Typography>
+            <Typography component="h2" variant="h6" style={{ marginBottom: '30px'}}>EXPERIENCE THE MASTER BARBER</Typography>
             <Typography component="h2" variant="h1">Ciriaco</Typography>
             <Typography component="h2" variant="h1">BarberShop</Typography>
           </Box>
