@@ -30,21 +30,17 @@ const useStyles = makeStyles((theme) => ({
   logoContainer:{
     position: 'absolute',
     backgroundColor: '#ffffff',
-    paddingLeft: '20px',
-    paddingRight: '40px',
-    paddingTop: '30px',
+    paddingTop: '20px',
+    paddingLeft: '10px',
+    paddingRight: '10px',
     display: 'flex',
     flexDirection: 'column',
-    height: '180px',
-    width: '120px',
+    height: '140px',
+    width: '97px',
   },
   logo: {
-    width: '100%',
-    height: '100%',
-    paddingLeft: '20px',
-    objectFit: 'contains',
-    maxWidth: '72px',
-    maxHeight: '65px',
+    paddingLeft: '25px',
+    maxWidth: '50px',
   },
   txtLogo: {
     color: 'black',
@@ -68,8 +64,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   menu: {
-    marginTop: '20px',
-    marginLeft: '10px',
+    marginTop: '10px',
+    marginLeft: '15px',
   },
 
 }));
@@ -106,7 +102,7 @@ function Header() {
           <Link href="/" underline='none' >
             <div>
               <img src={barba} alt="logo" className={ classes.logo }/>
-              <Typography variant="body1" component="h1" className={ classes.txtLogo }>
+              <Typography variant="body2" component="h1" className={ classes.txtLogo }>
                 BarberShop
               </Typography>
               <Box className={ classes.menu }>

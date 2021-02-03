@@ -3,6 +3,10 @@ import { makeStyles } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
+import AttachMoney from '@material-ui/icons/AttachMoney';
+import Bathtub from '@material-ui/icons/Bathtub';
+import Backup from '@material-ui/icons/Backup';
+import BlurOff from '@material-ui/icons/BlurOff';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
     margin: 30,
     border: '2px solid #ddd',
     borderRadius: '10px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   img: {
     maxWidth: 390,
@@ -36,9 +43,17 @@ const useStyles = makeStyles((theme) => ({
   txt: {
     maxWidth: 390,
     padding: 30,
-
-  }
-
+  },
+  icons: {
+    paddingTop: 15,
+    paddingBottom: 5,
+    color: '#556167',
+  },
+  textIcons: {
+    padding: 5,
+    fontSize: '12px',
+    color: '#556167',
+  },
 
 }));
 
@@ -65,10 +80,31 @@ export default function BodyTow() {
         </Typography>
       </Box>
       <Box className={ classes.square }>
-        <Box className={ classes.squares }></Box>
-        <Box className={ classes.squares }></Box>
-        <Box className={ classes.squares }></Box>
-        <Box className={ classes.squares }></Box>
+        <Box className={ classes.squares }>
+          <div className={ classes.icons }><AttachMoney fontSize='large'/></div>
+          <Typography component='h4' variant='body2' align='center' className={ classes.textIcons}>
+            ANYWHERE TEXT HERE
+          </Typography>
+        </Box>
+        <Box className={ classes.squares }>
+          <div className={ classes.icons }><Bathtub fontSize='large'/></div>
+          <Typography component='h4' variant='body2' align='center' className={ classes.textIcons}>
+            ANYWHERE TEXT HERE TO
+          </Typography>
+        </Box>
+        <Box className={ classes.squares }>
+          <div className={ classes.icons }><Backup fontSize='large'/></div>
+          <Typography component='h4' variant='body2' align='center' className={ classes.textIcons}>
+            ANYWHERE TEXT HERE TO
+          </Typography>
+        </Box>
+        <Box className={ classes.squares }>
+          <div className={ classes.icons }><BlurOff fontSize='large'/></div>
+          <Typography component='h4' variant='body2' align='center' className={ classes.textIcons}>
+            ANYWHERE TEXT HERE TO
+          </Typography>
+        </Box>
+
       </Box>
       <Hidden mdDown>
         <div style={{ width: 300 }}></div>
@@ -77,9 +113,6 @@ export default function BodyTow() {
         <img className={ classes.img } src="/images/image1.jpg" alt='barber_show'/>
       </Hidden>
       
-
-
-
     </Box>
   );
 }

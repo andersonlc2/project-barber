@@ -5,6 +5,8 @@ import Header from './components/Header';
 import AreaVideo from './components/AreaVideo';
 import BodyOne from './components/BodyOne';
 import BodyTow from './components/BodyTwo';
+import BodyTree from './components/BodyTree';
+import Footer from './components/Footer';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,6 +51,8 @@ function Home() {
       </div>
       <BodyOne />
       <BodyTow />
+      <BodyTree />
+      <Footer />
     </div>
   );
 }
