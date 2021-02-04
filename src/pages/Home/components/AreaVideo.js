@@ -18,12 +18,12 @@ const useStyles = makeStyles((theme) => ({
     zIndex: theme.zIndex.appBar -1,
   },
   txt: {
-    marginTop: '165px',
-    marginLeft: '180px',
+    paddingTop: '165px',
+    paddingLeft: '180px',
   },
   txtHidden: {
-    marginTop: '180px',
-    marginLeft: '40px',
+    paddingTop: '180px',
+    paddingLeft: '40px',
   },
   icons: {
     color: '#fff'

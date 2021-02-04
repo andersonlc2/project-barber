@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useWindowScroll } from 'react-use';
 import { makeStyles } from '@material-ui/core/styles';
+import { useNavigate } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -74,6 +75,8 @@ function Header() {
   const classes = useStyles();
   const { y: pageYOffset } = useWindowScroll();
   const [ activeScroll, setActive ] = useState(false);
+  
+  const navigate = useNavigate();
 
   // function getScroll() {
   //   const windowTop = window.pageYOffset;
@@ -119,7 +122,7 @@ function Header() {
           <div className={ classes.divList}>
             <List className={ classes.list }>
               <ListItem>
-                <Link component="button" variant="body2" color="inherit">Home</Link>
+                <Link component="button" variant="body2" color="inherit" onClick={ () => {navigate('/')} }>Home</Link>
               </ListItem>  
               <ListItem>
                 <Link component="button" variant="body2" color="inherit">Barbers</Link>
@@ -144,7 +147,7 @@ function Header() {
         </Hidden>
         <div className={ classes.grow }></div>
         <div>
-          <Button color="default">Login</Button>
+          <Button color="default" onClick={ () => {navigate('signin')} }>Login</Button>
         </div>
       </Toolbar>
     </AppBar>

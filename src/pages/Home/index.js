@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   deg: {
     position: 'absolute',
     width: '100%', 
-    height: '100%',
+    height: '102%',
     background: 'linear-gradient(360deg, rgba(0, 0, 0, 1) 2%, rgba(255, 255, 255, 0) 90%)',
     zIndex: theme.zIndex.appBar -1,
   },
@@ -39,11 +39,18 @@ function Home() {
       <div className={ classes.box }>
         <div className={ classes.container }>
           <div className={ classes.deg }></div>
-          <video 
+          {/* <video 
             style={{ width: '100%', height: '100%', top: 0, left: 0, objectFit: 'cover'}}
             src="/videos/video.mp4" 
             autoPlay loop muted 
             >
+          </video> */}
+          <video 
+            style={{ width: '100%', height: '100%', top: 0, left: 0, objectFit: 'cover'}}
+            autoPlay loop muted
+            >
+            <source src="/videos/video.mp4" type="video/mp4" />
+            <source src="/videos/video.ogg" type="video/ogg" />
           </video>
         </div>
         <Header />

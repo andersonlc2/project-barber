@@ -4,18 +4,17 @@ import Box from '@material-ui/core/Box';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 
-import Fade from 'react-reveal/Fade';
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     justifyContent: 'space-around',
+    alignItems: 'center',
     flexWrap: 'wrap',
     background: 'black',
     width: '100%',
     height: '300px',
-    paddingTop: '60px', 
+    // paddingTop: '60px', 
   },
   img: {
     marginTop: 40,
@@ -28,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     height: 600,
   },
   text: {
+    paddingBottom: 50,
   }
 }));
 
@@ -37,14 +37,14 @@ function BodyOne() {
   return (
     <Box className={ classes.root }>
       <Hidden smDown>
-        <Typography variant='h2' component='h2' color="textPrimary" align='center' >
-          <Fade left cascade>Master the art of barbering</Fade>
+        <Typography variant='h2' component='h2' color="textPrimary" align='center' className={ classes.text} >
+          Master the art of barbering
         </Typography>
       </Hidden>
       <Hidden mdUp>
         <Typography variant='h4' component='h2' color="textPrimary" align='center' >
-          <Fade left cascade ssrFadeout>Master the art of</Fade>
-          <Fade left cascade ssrFadeout>barbering</Fade>
+          Master the art of
+          barbering
         </Typography>
       </Hidden>
       <Hidden mdDown>

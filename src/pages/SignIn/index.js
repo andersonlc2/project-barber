@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
@@ -9,8 +10,6 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 import Link from '@material-ui/core/Link';
-
-
 
 
 const useStyles = makeStyles((theme) => ({
@@ -45,6 +44,13 @@ const useStyles = makeStyles((theme) => ({
 
 function SignIn(props) {
   const classes = useStyles();
+
+  async function handleSignIn() {
+    
+    const response = await axios.get('https://barbsc.herokuapp.com/api/barb/client/',
+      { email: 'amin@admin.com' });
+      console.log(response.data)
+  }
 
   return (
     <Grid container className={ classes.root }>
@@ -91,7 +97,7 @@ function SignIn(props) {
               label='E-mail'
               autoComplete='email'
               autoFocus
-
+              // onChange={  }
             />
             <TextField
               variant='outlined'
@@ -103,13 +109,14 @@ function SignIn(props) {
               type='password'
               id='password'
               autoComplete='current-password'
+              // onChange={  }
             />
             <Button 
               variant='contained' 
               color='primary'
               fullWidth
               className={ classes.btn }
-
+              onClick={ handleSignIn }
             >
               ENTRAR
             </Button>
